@@ -174,7 +174,7 @@ class PrivateRecipeApiTests(TestCase):
         self.client.patch(url, payload)
 
         recipe.refresh_from_db()
-        
+
         self.assertEqual(recipe.user, self.user)
 
     def test_delete_recipe(self):
