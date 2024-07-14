@@ -27,10 +27,16 @@
 ├── app/                                # Django project
 
         ├── app/
-        ├── core/
+        ├── core/                       # store models and database migrations
+        ├── recipe/ 
         ├── user/
          manage.py                      # entry point for the Django project
 
 ├── .github                             # GitHub Actions yaml file
 ```
 
+### Approach to creating each app with Test-Driven Development
+1. Create a new unit test for the model in `app/core/tests` and create a new model class in `app/core/models`.
+2. Make database migrations by running `docker-compose run --rm app sh -c "python manage.py makemigrations"`.
+3. Create a new Django app folder to store all the endpoints by running `docker-compose run --rm app sh -c "python manage.py startapp [app name]"`.
+4. Add each API endpoint unit test and implement the functions.
