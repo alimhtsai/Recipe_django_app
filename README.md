@@ -38,5 +38,6 @@
 ### Approach to creating each app with Test-Driven Development
 1. Create a new unit test for the model in `app/core/tests` and create a new model class in `app/core/models`.
 2. Make database migrations by running `docker-compose run --rm app sh -c "python manage.py makemigrations"`.
-3. Create a new Django app folder to store all the endpoints by running `docker-compose run --rm app sh -c "python manage.py startapp [app name]"`.
-4. Add each API endpoint unit test and implement the functions.
+3. To enable Django admin access the new model by adding `admin.site.register(models.[model name])` in the file `admin.py` under `app/core`.
+4. Create a new Django app folder to store all the endpoints by running `docker-compose run --rm app sh -c "python manage.py startapp [app name]"`.
+5. Add each API endpoint unit test and implement the functions.
